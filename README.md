@@ -2,8 +2,8 @@
 Your project's description...
 
 ## Environments
-- Preview: https://main--golf-torrey--torga65.aem.page/
-- Live: https://golf-torrey--torga65.aem.live/
+- Preview: https://main--golfwithtorrey--torga65.aem.page/
+- Live: https://main-golfwithtorrey--torga65.aem.live/
 
 ## Documentation
 
