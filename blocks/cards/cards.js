@@ -16,3 +16,24 @@ export default function decorate(block) {
   block.textContent = '';
   block.append(ul);
 }
+
+// Part 2: Add spinning background
+const backgroundImageUrl = 'https://main--golfsafety--torga65.aem.page/adobestock-1437282180.jpeg';
+const bg = document.createElement('div');
+bg.className = 'spinning-background';
+
+const img = document.createElement('img');
+img.src = backgroundImageUrl;
+bg.appendChild(img);
+
+document.body.appendChild(bg);
+
+let angle = 0;
+
+function spinBackground() {
+  angle += 0.05;
+  img.style.transform = `rotate(${angle}deg)`;
+  requestAnimationFrame(spinBackground);
+}
+
+spinBackground();
