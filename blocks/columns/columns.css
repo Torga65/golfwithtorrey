@@ -1,33 +1,21 @@
-.columns > div {
-  display: flex;
-  flex-direction: column;
+
+
+.melting-text h2 {
+  font-size: 5rem; 
+  color: rgb(230 0 0 / 80%);
+  text-shadow: 0 0 10px rgb(230 0 0);
+  animation: melt 2s infinite alternate ease-in-out;
+  filter: blur(0.5px);
 }
 
-.columns img {
-  width: 100%;
-}
-
-.columns > div > div {
-  order: 1;
-}
-
-.columns > div > .columns-img-col {
-  order: 0;
-}
-
-.columns > div > .columns-img-col img {
-  display: block;
-}
-
-@media (width >= 900px) {
-  .columns > div {
-    align-items: center;
-    flex-direction: unset;
-    gap: 24px;
+@keyframes melt {
+  0% {
+    transform: skewY(0deg);
+    filter: blur(0.5px);
   }
 
-  .columns > div > div {
-    flex: 1;
-    order: unset;
+  100% {
+    transform: skewY(5deg) translateY(5px);
+    filter: blur(1.5px);
   }
 }
