@@ -21,7 +21,7 @@
 
 .cards > ul > li:hover {
   transform: scale(1.15); 
-  background-color: rgba(255, 255, 255, 0.40);
+  background-color: rgb(255 255 255 / 40%);
 }
 
 .section.cards-container h1, h4, h5{
