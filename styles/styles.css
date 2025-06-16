@@ -158,6 +158,7 @@ main > div {
 input,
 textarea,
 select,
+
 button {
   font: inherit;
 }
