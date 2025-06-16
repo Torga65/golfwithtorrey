@@ -157,8 +157,7 @@
 
   .carousel .carousel-slide .carousel-slide-content {
     --slide-content-width: calc((100% - 184px) / 2);
-
-    margin: 92px;
+    margin-top: 800px;
   }
 
   .carousel .carousel-slide .carousel-slide-content[data-align='justify'] {
