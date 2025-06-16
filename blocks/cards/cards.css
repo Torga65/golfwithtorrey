@@ -1,13 +1,15 @@
 
 .cards > ul {
   list-style: none;
-  margin: auto;
-  width: 50%;
+  margin: 0 auto; 
+  width: 100%; 
+  max-width: 800px; 
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
+  grid-template-columns: repeat(2, minmax(257px, 400px)); 
   grid-gap: 60px;
-} 
+  justify-content: center; 
+}
 
 .cards-container h2 {
   text-align: center;

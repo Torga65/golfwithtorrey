@@ -2,8 +2,8 @@
   position: relative;
   margin: 0 auto;
   padding: 0 24px;
-  max-width: 50%;
-  max-height: 50%;
+  max-width: 800px;
+  max-height: 1000px;
   overflow: hidden;
 }
 
@@ -157,7 +157,7 @@
 
   .carousel .carousel-slide .carousel-slide-content {
     --slide-content-width: calc((100% - 184px) / 2);
-    
+
     margin-top: 800px;
   }
 

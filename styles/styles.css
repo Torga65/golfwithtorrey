@@ -87,26 +87,6 @@ body.appear {
   display: block;
 }
 
-header {
-  height: var(--header-height);
-}
-
-header .header,
-footer .footer {
-  visibility: hidden;
-}
-
-header .header[data-block-status="loaded"],
-footer .footer[data-block-status="loaded"] {
-  visibility: visible;
-}
-
-@media (width >= 900px) {
-  body[data-breadcrumbs] {
-    --header-height: calc(var(--nav-height) + var(--breadcrumbs-height));
-  }
-}
-
 h1,
 h2,
 h3,
@@ -242,26 +222,10 @@ main > .section {
 }
 
 main > .section > div {
-  max-width: 1200px;
   margin: auto;
-  padding: 0 24px;
 }
 
 main > .section:first-of-type {
   margin-top: 0;
 }
 
-@media (width >= 900px) {
-  main > .section > div {
-    padding: 0 32px;
-    max-width: 100%;
-  }
-}
-
-/* section metadata */
-main .section.light,
-main .section.highlight {
-  background-color: var(--light-color);
-  margin: 0;
-  padding: 40px 0;
-}

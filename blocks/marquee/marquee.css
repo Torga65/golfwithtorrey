@@ -32,16 +32,14 @@
 }
 
 .foreground-container img {
-padding-left: 100px
+display: block;
+  padding-left: 100px
+
 }
 
 .text-cta-container .buttons-container p {
   margin:0;
  }
-
- .foreground-container {
-  text-align: center;
-}
 
 .text-cta-container > .buttons-container
   {
