@@ -11,6 +11,17 @@
   justify-content: center; 
 }
 
+.cards > ul > li {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 0.3s ease; 
+}
+
+.cards > ul > li:hover {
+  transform: scale(1.15); 
+  background-color: rgba(255, 255, 255, 0.40);
+}
 .cards-container h2 {
   text-align: center;
 }

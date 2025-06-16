@@ -147,21 +147,9 @@
   text-align: center;
   color: black;
 }
- 
 
-@media (width >= 600px) {
-  .carousel .carousel-navigation-buttons {
-    left: 24px;
-    right: 24px;
-  }
+.carousel .carousel-slide .carousel-slide-content {
+  --slide-content-width: calc((100% - 184px) / 2);
 
-  .carousel .carousel-slide .carousel-slide-content {
-    --slide-content-width: calc((100% - 184px) / 2);
-
-    margin-top: 800px;
-  }
-
-  .carousel .carousel-slide .carousel-slide-content[data-align='justify'] {
-    --slide-content-width: auto;
-  }
+  margin-top: 800px;
 }
