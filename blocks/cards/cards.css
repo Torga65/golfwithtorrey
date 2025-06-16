@@ -1,21 +1,32 @@
 
 .cards > ul {
   list-style: none;
-  margin: auto;
-  width: 50%;
+  margin: 0 auto; 
+  width: 100%; 
+  max-width: 800px; 
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
+  grid-template-columns: repeat(2, minmax(257px, 400px)); 
   grid-gap: 60px;
-} 
-
-.cards-container h2 {
-  text-align: center;
+  justify-content: center;
+  color: #484727;
 }
 
 .cards > ul > li {
-  border: 1px solid #dadada;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 0.3s ease; 
+}
 
+.cards > ul > li:hover {
+  transform: scale(1.15); 
+  background-color: rgb(255 255 255 / 40%);
+}
+
+.section.cards-container h1, h4, h5{
+  text-align: center;
+  color: #484727;
 }
 
 .cards .cards-card-body {
@@ -28,11 +39,16 @@
 
 .spinning-background {
   position: fixed;
+  background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+  animation: spin 60s linear infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
   z-index: -1;
   pointer-events: none;
 }

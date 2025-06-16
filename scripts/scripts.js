@@ -211,3 +211,13 @@ async function loadPage() {
 }
 
 loadPage();
+
+const links = document.querySelectorAll('a');
+
+links.forEach((link) => {
+  // Check if the link's hostname is different from the current page's hostname
+  if (link.hostname !== window.location.hostname) {
+    link.setAttribute('target', '_blank'); // Open in a new tab
+    link.setAttribute('rel', 'noopener noreferrer'); // Add security attributes
+  }
+});
