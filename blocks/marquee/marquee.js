@@ -33,6 +33,7 @@ function setupVideo(url, block) {
 function setupBGVideos(block) {
   const extDamUrl = /content\/dam\//;
   const videoLinks = Array.from(block.querySelectorAll('a[href*=".mp4"]'));
+  const domain = 'https://main--golfwithtorrey--torga65.aem.live';
   videoLinks.forEach((link) => {
     if (extDamUrl.test(link.href)) {
       const fullDamUrl = `${domain}${link.pathname}`;
