@@ -29,11 +29,6 @@
   color: #484727;
 }
 
-.cards > ul > li {
-  border: 1px solid #dadada;
-
-}
-
 .cards .cards-card-body {
   margin: 16px;
 }
@@ -50,12 +45,10 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
   z-index: -1;
   pointer-events: none;
 }
