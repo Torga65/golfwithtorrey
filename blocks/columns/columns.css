@@ -1,26 +1,37 @@
-.columns.block.columns-3-cols {
-  display: grid;
-  grid-template-columns: auto 1fr auto; /* First and third columns adjust to content, center column takes remaining space */
-  gap: 20px; /* Add spacing between columns */
-  max-width: 10%; /* Allow the grid to take up the full width */
-  align-items: center; /* Vertically align items */
+.columns-container {
+  display: flex; /* Use flexbox for horizontal layout */
+  flex-direction: row; /* Arrange items in a row */
+  align-items: center; /* Center items vertically */
+  gap: 20px; /* Space between the lights and button */
+  justify-content: center; /* Center the entire layout horizontally */
 }
 
-.columns.block.columns-3-cols img {
-  width: 100%; /* Ensure images fit their columns */
-  height: auto; /* Maintain aspect ratio */
+.columns-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* Optional: spacing between lights and button */
 }
 
-.columns.block.columns-3-cols .button-container {
-  text-align: center; /* Center the button in the middle column */
+/* Styling for the lights */
+.columns-img-col {
+  width: 100px; /* Adjust size of the lights */
+  height: 100px;
+  background-color: red; /* Default light color */
+  border-radius: 50%; /* Make the lights circular */
+  animation: flash 1s infinite alternate; /* Flashing effect */
 }
 
-.columns.block.columns-3-cols .button-container a {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: var(--link-color); /* Button background color */
-  color: var(--background-color); /* Button text color */
-  text-decoration: none;
-  border-radius: 5px; /* Rounded corners for the button */
-  font-size: 16px;
+/* Flashing animation */
+@keyframes flash {
+  0% {
+    background-color: red; /* Light is red */
+    opacity: 1; /* Fully visible */
+  }
+
+  100% {
+    background-color:transparent; /* Light changes to yellow */
+    opacity: 0.7; /* Slightly dimmed */
+  }
 }
