@@ -4,12 +4,12 @@
   100% { transform: scale(1)}
 }
 
-.main .scroll-animation {
+.scroll-animation {
   display: block;
   height: calc(var(--scroll-animation-height) * var(--scroll-animation-items, 1));
 }
 
-.main .scroll-animation .scroll-animation-window {
+.scroll-animation .scroll-animation-window {
   position: sticky;
   height: var(--scroll-animation-height);
   top: calc((100vh - var(--scroll-animation-height)) / 2);
@@ -19,36 +19,52 @@
   margin: auto;
 }
 
-.main .scroll-animation .scroll-animation-scroll-icon {
-  background-image: url("/icons/scroll.svg");
-  width: 58px;
-  height: 102px;
-  position: absolute;
-  top: 25%;
-  left: 20px;
+.section.scroll-animation-container h3,h5 {
+  text-align: center;
+  color: #16610E;
+}
+
+
+.section.scroll-animation-container h4 {
+  text-align: center;
+  color: #16610E;
   animation: pulse 1s infinite;
-  opacity: 0;
+  transition: ease-in-out 300ms;
+  padding: 50px 0 0 200px;
+  position: absolute;
+}
+
+.scroll-animation .scroll-animation-scroll-icon {
+  background-image: url("/icons/scroll.svg");
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 20%;
+  left: 290px;
+  animation: pulse 1s infinite;
+  opacity: .1;
   transition: ease-in-out 300ms;
 }
 
-.main .scroll-animation .scroll-animation-image {
+
+.scroll-animation .scroll-animation-image {
   display: grid;
-  place-items: center center;
+  place-items: center;
   z-index: 1;
   grid-area: 1 / 1;
   opacity: 0;
   transition: ease-in-out 300ms;
 }
 
-.main .scroll-animation .scroll-animation-body {
+.scroll-animation .scroll-animation-body {
   grid-area: 1 / 1;
 }
 
-.main .scroll-animation .scroll-animation-heading {
+.scroll-animation .scroll-animation-heading {
   position: absolute;
   z-index: 3;
-  background-color: var(--clr-green);
-  color: #fff;
+  background-color: transparent;
+  color: #16610E;
   border-radius: 12rem;
   padding: 0.7rem 1rem;
   font-size: 1.4rem;
@@ -60,25 +76,39 @@
   transform: scale(0.6);
 }
 
-.main .scroll-animation .scroll-animation-text {
+.scroll-animation .scroll-animation-text {
   position: absolute;
   z-index: 2;
   text-align: left;
   padding: initial;
   font-size: var(--body-font-size-xs);
-  color: var(--text-color);
   opacity: 0;
   transition: ease-in-out 500ms;
 }
 
-.main .scroll-animation .scroll-animation-image[data-status="behind"],
-.main .scroll-animation .scroll-animation-image[data-status="active"],
-.main .scroll-animation .scroll-animation-body[data-status="active"] .scroll-animation-text{
+.scroll-animation .scroll-animation-image[data-status="behind"],
+.scroll-animation .scroll-animation-image[data-status="active"],
+.scroll-animation .scroll-animation-body[data-status="active"] .scroll-animation-text{
   opacity: 1;
 }
 
-.main .scroll-animation .scroll-animation-body[data-status="active"] .scroll-animation-heading {
-  color: #fff;
+/* Ensure only the active image is visible */
+.scroll-animation .scroll-animation-image[data-status="hidden"],
+.scroll-animation .scroll-animation-image[data-status="behind"] {
+  opacity: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ensure the active image is on top */
+.scroll-animation .scroll-animation-image[data-status="active"] {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 2;
+}
+
+.scroll-animation .scroll-animation-body[data-status="active"] .scroll-animation-heading {
+  color: black;
   background-position: center;
   background-color: transparent;
   background-repeat: no-repeat;
@@ -89,24 +119,24 @@
 
 /* Custom placement for each heading and text */
 
-.main .scroll-animation .scroll-animation-body[data-index="1"] .scroll-animation-heading {
+.scroll-animation .scroll-animation-body[data-index="1"] .scroll-animation-heading {
   top: 65%;
   left: 15%;
 }
 
-.main .scroll-animation .scroll-animation-body[data-index="2"] .scroll-animation-heading {
+.scroll-animation .scroll-animation-body[data-index="2"] .scroll-animation-heading {
   top: 24%;
   left: 72%;
 }
 
-.main .scroll-animation .scroll-animation-body[data-index="3"] .scroll-animation-heading {
+.scroll-animation .scroll-animation-body[data-index="3"] .scroll-animation-heading {
   top: 65%;
   left: 72%;
 }
 
-.main .scroll-animation .scroll-animation-body[data-index="1"] .scroll-animation-text,
-.main .scroll-animation .scroll-animation-body[data-index="2"] .scroll-animation-text,
-.main .scroll-animation .scroll-animation-body[data-index="3"] .scroll-animation-text {
+.scroll-animation .scroll-animation-body[data-index="1"] .scroll-animation-text,
+.scroll-animation .scroll-animation-body[data-index="2"] .scroll-animation-text,
+.scroll-animation .scroll-animation-body[data-index="3"] .scroll-animation-text {
   bottom: 0;
   left: 6%;
   right: 6%;
@@ -114,34 +144,34 @@
 }
 
 @media (width >= 561px) {
-  .main .scroll-animation .scroll-animation-window{
+  .scroll-animation .scroll-animation-window{
     max-width: none;
     margin: unset;
   }
 
-  .main .scroll-animation .scroll-animation-image {
+  .scroll-animation .scroll-animation-image {
     max-width: 200px;
     margin-right: auto;
   }
 
-  .main .scroll-animation .scroll-animation-body[data-index="1"] .scroll-animation-heading {
+  .scroll-animation .scroll-animation-body[data-index="1"] .scroll-animation-heading {
     top: 58%;
     left: 10px;
   }
   
-  .main .scroll-animation .scroll-animation-body[data-index="2"] .scroll-animation-heading {
+  .scroll-animation .scroll-animation-body[data-index="2"] .scroll-animation-heading {
     top: 32%;
     left: 152px;
   }
   
-  .main .scroll-animation .scroll-animation-body[data-index="3"] .scroll-animation-heading {
+  .scroll-animation .scroll-animation-body[data-index="3"] .scroll-animation-heading {
     top: 58%;
     left: 152px;
   }
   
-  .main .scroll-animation .scroll-animation-body[data-index="1"] .scroll-animation-text,
-  .main .scroll-animation .scroll-animation-body[data-index="2"] .scroll-animation-text,
-  .main .scroll-animation .scroll-animation-body[data-index="3"] .scroll-animation-text {
+  .scroll-animation .scroll-animation-body[data-index="1"] .scroll-animation-text,
+  .scroll-animation .scroll-animation-body[data-index="2"] .scroll-animation-text,
+  .scroll-animation .scroll-animation-body[data-index="3"] .scroll-animation-text {
     inset: 40% 0 auto 57%;
     text-align: left;
   }
@@ -149,53 +179,53 @@
 
 /* tablet break point */
 @media (width >= 768px) {
-  .main .scroll-animation .scroll-animation-window{
+  .scroll-animation .scroll-animation-window{
     max-width: none;
     margin: unset;
   }
 
-  .main .scroll-animation .scroll-animation-image {
+  .scroll-animation .scroll-animation-image {
     max-width: 450px;
     margin: auto;
   }
 
-  .main .scroll-animation .scroll-animation-heading {
+  .scroll-animation .scroll-animation-heading {
     transform: none;
   }
 
-  .main .scroll-animation[data-current-index="0"] .scroll-animation-scroll-icon,
-  .main .scroll-animation[data-current-index="3"] .scroll-animation-scroll-icon {
+  .scroll-animation[data-current-index="0"] .scroll-animation-scroll-icon,
+  .scroll-animation[data-current-index="3"] .scroll-animation-scroll-icon {
     opacity: 1;
   }
 
-  .main .scroll-animation .scroll-animation-body[data-index="1"] .scroll-animation-heading {
+  .scroll-animation .scroll-animation-body[data-index="1"] .scroll-animation-heading {
     top: 62%;
     left: 25%;
   }
   
-  .main .scroll-animation .scroll-animation-body[data-index="1"] .scroll-animation-text {
+  .scroll-animation .scroll-animation-body[data-index="1"] .scroll-animation-text {
     inset: 52% auto auto 6%;
     width: 140px;
   }
   
-  .main .scroll-animation .scroll-animation-body[data-index="2"] .scroll-animation-heading {
+  .scroll-animation .scroll-animation-body[data-index="2"] .scroll-animation-heading {
 		top: 21%;
 		left: 65%;
   }
   
-  .main .scroll-animation .scroll-animation-body[data-index="2"] .scroll-animation-text {
+  .scroll-animation .scroll-animation-body[data-index="2"] .scroll-animation-text {
 		top: 20%;
 		left: 74%;
     width: 180px;
   }
   
-  .main .scroll-animation .scroll-animation-body[data-index="3"] .scroll-animation-heading {
+  .scroll-animation .scroll-animation-body[data-index="3"] .scroll-animation-heading {
 		top: 60%;
 		left: 72%;
     right: auto;
   }
   
-  .main .scroll-animation .scroll-animation-body[data-index="3"] .scroll-animation-text {
+  .scroll-animation .scroll-animation-body[data-index="3"] .scroll-animation-text {
 		top: 60%;
 		left: 82%;
 		width: 140px;
@@ -204,42 +234,42 @@
 
 /* laptop break point */
 @media (width >= 992px) {
-  .main .scroll-animation .scroll-animation-image {
+  .scroll-animation .scroll-animation-image {
     max-width: unset;
   }
 
-  .main .scroll-animation .scroll-animation-text {
+  .scroll-animation .scroll-animation-text {
     font-size: 18px;
     line-height: 24px;
     font-weight: 700;
   }
 
-  .main .scroll-animation .scroll-animation-body[data-index="1"] .scroll-animation-heading {
+  .scroll-animation .scroll-animation-body[data-index="1"] .scroll-animation-heading {
 		top: 75%;
 		left: 23%;
   }
   
-  .main .scroll-animation .scroll-animation-body[data-index="1"] .scroll-animation-text {
+  .scroll-animation .scroll-animation-body[data-index="1"] .scroll-animation-text {
 		top: 60%;
 		left: 6%;
   }
   
-  .main .scroll-animation .scroll-animation-body[data-index="2"] .scroll-animation-heading {
+  .scroll-animation .scroll-animation-body[data-index="2"] .scroll-animation-heading {
 		top: 13%;
 		left: 65%;
   }
   
-  .main .scroll-animation .scroll-animation-body[data-index="2"] .scroll-animation-text {
+  .scroll-animation .scroll-animation-body[data-index="2"] .scroll-animation-text {
 		top: 10%;
 		left: 74%;
   }
   
-  .main .scroll-animation .scroll-animation-body[data-index="3"] .scroll-animation-heading {
+  .scroll-animation .scroll-animation-body[data-index="3"] .scroll-animation-heading {
 		top: 70%;
 		left: 77%;
   }
   
-  .main .scroll-animation .scroll-animation-body[data-index="3"] .scroll-animation-text {
+  .scroll-animation .scroll-animation-body[data-index="3"] .scroll-animation-text {
 		top: 70%;
 		left: 83.8%;
     width: 155px;
@@ -248,34 +278,34 @@
 
 /* hd break point */
 @media (width >= 1366px) {
-  .main .scroll-animation .scroll-animation-body[data-index="1"] .scroll-animation-heading {
+  .scroll-animation .scroll-animation-body[data-index="1"] .scroll-animation-heading {
     top: 69%;
     left: 22%;
   }
   
-  .main .scroll-animation .scroll-animation-body[data-index="1"] .scroll-animation-text {
+  .scroll-animation .scroll-animation-body[data-index="1"] .scroll-animation-text {
     top: 53%;
     left: 7%;
     width: 180px;
   }
   
-  .main .scroll-animation .scroll-animation-body[data-index="2"] .scroll-animation-heading {
+  .scroll-animation .scroll-animation-body[data-index="2"] .scroll-animation-heading {
     top: 14%;
     left: 69%;
   }
   
-  .main .scroll-animation .scroll-animation-body[data-index="2"] .scroll-animation-text {
+  .scroll-animation .scroll-animation-body[data-index="2"] .scroll-animation-text {
     top: 12%;
     left: 76%;
     width: 230px;
   }
   
-  .main .scroll-animation .scroll-animation-body[data-index="3"] .scroll-animation-heading {
+  .scroll-animation .scroll-animation-body[data-index="3"] .scroll-animation-heading {
     top: 74%;
     left: 76%;
   }
   
-  .main .scroll-animation .scroll-animation-body[data-index="3"] .scroll-animation-text {
+  .scroll-animation .scroll-animation-body[data-index="3"] .scroll-animation-text {
     top: 73%;
     left: 83%;
     width: 155px;

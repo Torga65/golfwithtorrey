@@ -24,10 +24,16 @@
   background-color: rgb(255 255 255 / 40%);
 }
 
-.section.cards-container h1, h4, h5{
+.section.cards-container h5{
   text-align: center;
   color: #484727;
+  
 }
+
+  .section.cards-container h1, h4 {
+    color: #16610E;
+    text-align: center;
+  }
 
 .cards .cards-card-body {
   margin: 16px;
@@ -39,7 +45,6 @@
 
 .spinning-background {
   position: fixed;
-  background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
   animation: spin 60s linear infinite;
   display: flex;
   justify-content: center;
@@ -66,3 +71,4 @@
   aspect-ratio: 4 / 3;
   object-fit: cover;
 }
+
