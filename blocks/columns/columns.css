@@ -1,21 +1,26 @@
-
-
-.melting-text h2 {
-  font-size: 5rem; 
-  color: rgb(230 0 0 / 80%);
-  text-shadow: 0 0 10px rgb(230 0 0);
-  animation: melt 2s infinite alternate ease-in-out;
-  filter: blur(0.5px);
+.columns.block.columns-3-cols {
+  display: grid;
+  grid-template-columns: auto 1fr auto; /* First and third columns adjust to content, center column takes remaining space */
+  gap: 20px; /* Add spacing between columns */
+  max-width: 10%; /* Allow the grid to take up the full width */
+  align-items: center; /* Vertically align items */
 }
 
-@keyframes melt {
-  0% {
-    transform: skewY(0deg);
-    filter: blur(0.5px);
-  }
+.columns.block.columns-3-cols img {
+  width: 100%; /* Ensure images fit their columns */
+  height: auto; /* Maintain aspect ratio */
+}
 
-  100% {
-    transform: skewY(5deg) translateY(5px);
-    filter: blur(1.5px);
-  }
+.columns.block.columns-3-cols .button-container {
+  text-align: center; /* Center the button in the middle column */
+}
+
+.columns.block.columns-3-cols .button-container a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--link-color); /* Button background color */
+  color: var(--background-color); /* Button text color */
+  text-decoration: none;
+  border-radius: 5px; /* Rounded corners for the button */
+  font-size: 16px;
 }
