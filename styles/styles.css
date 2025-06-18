@@ -41,6 +41,10 @@
   --nav-height: 64px;
   --breadcrumbs-height: 34px;
   --header-height: var(--nav-height);
+
+    /* scrollbar */
+    --scrollbar-width: 10px;
+    --scroll-animation-height: 700px;
 }
 
 /* fallback fonts */

@@ -18,7 +18,7 @@ export default function decorate(block) {
 }
 
 // Part 2: Add spinning background
-const backgroundImageUrl = 'https://main--golfsafety--torga65.aem.page/adobestock-1437282180.jpeg';
+const backgroundImageUrl = 'https://main--golfwithtorrey--torga65.aem.page/adobestock-938487177.jpeg';
 const bg = document.createElement('div');
 bg.className = 'spinning-background';
 

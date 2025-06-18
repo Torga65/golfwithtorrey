@@ -2,6 +2,7 @@ import { createOptimizedPicture } from '../../scripts/scripts.js';
 
 class ScrollAnimation {
   constructor(block) {
+    this.block = block;
     this.itemsCount = block.children.length;
   }
 
@@ -38,10 +39,9 @@ class ScrollAnimation {
       const index = Number(target.closest('[data-index]').dataset.index);
       if (Number.isNaN(index)) return;
       const rect = this.block.getBoundingClientRect();
-      const offset = rect.top
-        + (index - 1) * (rect.height / this.itemsCount)
-        + document.documentElement.scrollTop
-        + 1;
+      const itemHeight = rect.height / this.itemsCount;
+      const { scrollTop } = document.documentElement;
+      const offset = rect.top + (index - 1) * itemHeight + scrollTop + 1;
       window.scrollTo({ top: offset, behavior: 'instant' });
     });
   }

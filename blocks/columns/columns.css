@@ -1,21 +1,41 @@
-
-
-.melting-text h2 {
-  font-size: 5rem; 
-  color: rgb(230 0 0 / 80%);
-  text-shadow: 0 0 10px rgb(230 0 0);
-  animation: melt 2s infinite alternate ease-in-out;
-  filter: blur(0.5px);
+.columns-container {
+  display: flex;
+  flex-direction: row; 
+  align-items: center; 
+  gap: 20px; 
+  justify-content: center; 
 }
 
-@keyframes melt {
+.columns.block.columns-1-cols {
+  display: flex; 
+}
+
+.columns-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; 
+}
+
+/* Styling for the lights */
+.columns-img-col {
+  width: 100px; 
+  height: 100px;
+  background-color: red; 
+  border-radius: 50%; 
+  animation: flash 1s infinite alternate; 
+}
+
+/* Flashing animation */
+@keyframes flash {
   0% {
-    transform: skewY(0deg);
-    filter: blur(0.5px);
+    background-color: red;
+    opacity: 1; 
   }
 
   100% {
-    transform: skewY(5deg) translateY(5px);
-    filter: blur(1.5px);
+    background-color:transparent; 
+    opacity: 0.7; 
   }
 }

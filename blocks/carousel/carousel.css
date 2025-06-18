@@ -136,11 +136,16 @@
   transform: translate(-50%, -50%) rotate(-135deg);
 }
 
-.section.carousel-container h1, h3{
+.section.carousel-container h1{
 text-align: center;
-color: #484727;
+color: #16610E;
   font-weight: 700;
   margin: 0;
+}
+
+.section.carousel-container h3{
+  color: #484727;
+  text-align: center;
 }
 
 .carousel .carousel-navigation-buttons button.slide-next::after {
