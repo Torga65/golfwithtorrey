@@ -230,4 +230,3 @@ export default async function decorate(block) {
   background.remove();
   block.querySelectorAll('div').forEach((div) => { if (div.children.length === 0) div.remove(); }); // remove empty divs
 }
-
