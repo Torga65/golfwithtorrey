@@ -19,11 +19,20 @@
   margin: auto;
 }
 
-.section.scroll-animation-container h3,h5 {
+.section.scroll-animation-container {
+  background: white;
+}
+
+.section.scroll-animation-container h3 {
+  text-align: center;
+  color: #16610E;
+  padding-top: 50px;
+}
+
+.section.scroll-animation-container h5 {
   text-align: center;
   color: #16610E;
 }
-
 
 .section.scroll-animation-container h4 {
   text-align: center;
