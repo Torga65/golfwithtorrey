@@ -6,6 +6,10 @@
   justify-content: center; 
 }
 
+.columns.block.columns-1-cols {
+  display: flex; 
+}
+
 .columns-row {
   display: flex;
   flex-direction: row;
