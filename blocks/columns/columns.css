@@ -1,9 +1,9 @@
 .columns-container {
-  display: flex; /* Use flexbox for horizontal layout */
-  flex-direction: row; /* Arrange items in a row */
-  align-items: center; /* Center items vertically */
-  gap: 20px; /* Space between the lights and button */
-  justify-content: center; /* Center the entire layout horizontally */
+  display: flex;
+  flex-direction: row; 
+  align-items: center; 
+  gap: 20px; 
+  justify-content: center; 
 }
 
 .columns-row {
@@ -11,27 +11,27 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 20px; /* Optional: spacing between lights and button */
+  gap: 20px; 
 }
 
 /* Styling for the lights */
 .columns-img-col {
-  width: 100px; /* Adjust size of the lights */
+  width: 100px; 
   height: 100px;
-  background-color: red; /* Default light color */
-  border-radius: 50%; /* Make the lights circular */
-  animation: flash 1s infinite alternate; /* Flashing effect */
+  background-color: red; 
+  border-radius: 50%; 
+  animation: flash 1s infinite alternate; 
 }
 
 /* Flashing animation */
 @keyframes flash {
   0% {
-    background-color: red; /* Light is red */
-    opacity: 1; /* Fully visible */
+    background-color: red;
+    opacity: 1; 
   }
 
   100% {
-    background-color:transparent; /* Light changes to yellow */
-    opacity: 0.7; /* Slightly dimmed */
+    background-color:transparent; 
+    opacity: 0.7; 
   }
 }
