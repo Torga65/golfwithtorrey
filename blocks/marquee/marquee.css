@@ -4,6 +4,7 @@
     border: none;
     overflow: hidden;
     min-height: 426px;
+    margin: 0;
 }
 
 .marquee-content {
