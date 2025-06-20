@@ -31,7 +31,7 @@
 @keyframes flash {
   0% {
     background-color: red;
-    opacity: 1; 
+    opacity: .8; 
   }
 
   100% {
