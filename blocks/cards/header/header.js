@@ -1,25 +1,8 @@
-import { getMetadata } from '../../scripts/aem.js';
-import { fetchPlaceholders } from '../../scripts/placeholders.js';
+import { fetchPlaceholders, getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia('(min-width: 900px)');
-
-// Ensure external links open in a new tab
-function makeExternalLinksOpenInNewTab() {
-  const anchors = document.querySelectorAll('a[href]');
-  anchors.forEach((a) => {
-    try {
-      const linkUrl = new URL(a.href, window.location.href);
-      if (linkUrl.hostname !== window.location.hostname) {
-        a.setAttribute('target', '_blank');
-        a.setAttribute('rel', 'noopener noreferrer');
-      }
-    } catch (e) {
-      // skip invalid URLs
-    }
-  });
-}
 
 function closeOnEscape(e) {
   if (e.code === 'Escape') {
@@ -257,6 +240,4 @@ export default async function decorate(block) {
   if (getMetadata('breadcrumbs').toLowerCase() === 'true') {
     navWrapper.append(await buildBreadcrumbs());
   }
-
-  makeExternalLinksOpenInNewTab();
 }
