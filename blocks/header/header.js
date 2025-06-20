@@ -22,6 +22,21 @@ function closeOnEscape(e) {
   }
 }
 
+function makeExternalLinksOpenInNewTab() {
+  const anchors = document.querySelectorAll('a[href]');
+  anchors.forEach((a) => {
+    try {
+      const linkUrl = new URL(a.href, window.location.href);
+      if (linkUrl.hostname !== window.location.hostname) {
+        a.setAttribute('target', '_blank');
+        a.setAttribute('rel', 'noopener noreferrer');
+      }
+    } catch (e) {
+      // skip invalid URLs
+    }
+  });
+}
+
 function closeOnFocusLost(e) {
   const nav = e.currentTarget;
   if (!nav.contains(e.relatedTarget)) {
@@ -241,4 +256,5 @@ export default async function decorate(block) {
   if (getMetadata('breadcrumbs').toLowerCase() === 'true') {
     navWrapper.append(await buildBreadcrumbs());
   }
+  makeExternalLinksOpenInNewTab();
 }

@@ -76,3 +76,33 @@
   width: 100%;
   object-fit: cover;
 }
+
+.cards > ul > li:not(:nth-last-child(-n+2)) img {
+  aspect-ratio: 4 / 3;
+}
+
+
+.cards > ul > li:nth-last-child(-n+2) img {
+  width: auto; 
+  height: auto; 
+  object-fit: contain; 
+}
+
+@media (width < 768px) {
+  .cards > ul {
+    display: block;
+    max-width: 75%;
+  }
+
+  .cards > ul > li:hover {
+    transform: none; 
+    background-color: transparent; 
+  }
+  
+  .cards > ul > li:nth-last-child(-n+2):hover,
+.cards > ul > li:nth-last-child(-n+2):hover ~ li:nth-last-child(-n+2),
+.cards > ul > li:nth-last-child(-n+2):hover + li:nth-last-child(-n+2) {
+  transform: none; 
+  background-color: transparent; 
+}
+}
